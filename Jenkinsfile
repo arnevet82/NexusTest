@@ -12,13 +12,16 @@ environment {
                  
             }
         }
-  stage('run'){
+         stage('upload to nexus registry') {
             steps {
-                sh 'python --version'
-                sh 'python python_test.py'
-                sh 'ls'
-                sh 'curl -v -u admin:admin123 --upload-file hello.py http://nexus:8081/repository/git-products/'
+                 sh 'curl -v -u admin:admin123 --upload-file hello.py http://nexus:8081/repository/git-products/'                 
             }
         }
-    }
-}
+       stage('run'){
+                 steps {
+                     sh 'python --version'
+                     sh 'python python_test.py'
+                 }
+             }
+         }
+     }
