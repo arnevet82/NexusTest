@@ -16,7 +16,7 @@ environment {
             steps {
                 sh 'python --version'
                 sh 'python python_test.py'
-                sh 'cd /home/nexus'
+                sh 'ls'
                 //sh 'curl -v -u admin:admin123 --upload-file python_test.py http://nexus:8081/repository/git-products/'
             }
         }
